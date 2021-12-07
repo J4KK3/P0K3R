@@ -17,32 +17,43 @@
 
 	#p1
 	{
-
+		position: absolute;
+		top:58.5%;
+		left: 10%;
 	}
 	
 	#p2
 	{
-
+		position: absolute;
+		left: 25%;
+		top:58.5%;
 	}
 	
 	#p3
 	{
-
+		position: absolute;
+		left: 40%;
+		top:58.5%;
 	}
 	
 	#p4
 	{
-
+		position: absolute;
+		left: 55%;
+		top:58.5%;
 	}
 	
 	#p5
 	{
-
+		position: absolute;
+		left: 70%;
+		top:58.5%;
 	}
 	
 	#dealer
 	{
-
+		position: absolute;
+		left: 33%;
 	}
 	
 
@@ -54,6 +65,13 @@
 <div id=bord>
 <?php
 include "functions.php";
+$dir = "directory.txt";
+
+if(!file_exists($dir))
+{
+	$dir = "directory.txt";
+}
+
 
 // en kortlek
 $kortlek = array();
@@ -83,67 +101,35 @@ $sparaSparaVarde = array();
 // blanda kortleken
 shuffle($kortlek);
 
-// ta de fem forsta korten
-/*
-for($k = 0; $k < 5; $k++)
-{
-	// ta reda pa kortets varde
-	$varde = $kortlek[$k] % 13;
-	
-	// ta reda pa kortets farg
-	$farg = ($kortlek[$k] - $varde)/13;
-	//$farg = 2;
-	//spara i arrayer
-	$sparaVarde[$k] = $varde;
-	$sparaFarg[$k] = $farg;
-	
-
-	// skriv ut farg och varde
-	//echo $farger[$farg].$varde." ";
-	echo "<div id=dealer>";
-	if($varde == 0)
-	{
-		$bildadress = "ace".$fargerny[$farg].".png";
-		echo "<img width=100px; src=cards/".$bildadress.">";
-	}
-	elseif($varde < 10)
-	{
-		$bildadress = ($varde+1).$fargerny[$farg].".png";
-		echo "<img width=100px; src=cards/".$bildadress.">";
-	}
-	else
-	{
-		$bildadress = ($vardeSpecial[$varde]).$fargerny[$farg].".png";
-		echo "<img width=100px; src=cards/".$bildadress.">";
-	}
-	echo "</div";
-}
-*/
 
 echo "<div id=dealer>";
 $dealer = dealer();
 echo "</div>";
 
-echo "<div class=player id=p1>";
-$c1 = check_hand(5, $sparaVarde, $sparaFarg);
-echo "</div>";
 
-echo "<div class=player id=p2>";
-$c2 = check_hand(7, $sparaVarde, $sparaFarg);
-echo "</div>";
 
-echo "<div class=player id=p3>";
-$c3 = check_hand(9, $sparaVarde, $sparaFarg);
-echo "</div>";
 
-echo "<div class=player id=p4>";
-$c4 = check_hand(11, $sparaVarde, $sparaFarg);
-echo "</div>";
+echo "<div id=container>";
+	echo "<div class=player id=p1>";
+	$c1 = check_hand(5, $sparaVarde, $sparaFarg);
+	echo "</div>";
 
-echo "<div class=player id=p5>";
-$c5 = check_hand(13, $sparaVarde, $sparaFarg);
-echo "</div>";
+	echo "<div class=player id=p2>";
+	$c2 = check_hand(7, $sparaVarde, $sparaFarg);
+	echo "</div>";
 
+	echo "<div class=player id=p3>";
+	$c3 = check_hand(9, $sparaVarde, $sparaFarg);
+	echo "</div>";
+
+	echo "<div class=player id=p4>";
+	$c4 = check_hand(11, $sparaVarde, $sparaFarg);
+	echo "</div>";
+
+	echo "<div class=player id=p5>";
+	$c5 = check_hand(13, $sparaVarde, $sparaFarg);
+	echo "</div>";
+echo "</div>";
 
 ?>
 
