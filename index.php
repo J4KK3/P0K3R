@@ -2,6 +2,7 @@
 
 
 
+
 	div#bord
 	{
 		border-style: solid;
@@ -59,6 +60,8 @@
 	}
 	
 
+	
+
 </style>
 
 
@@ -67,12 +70,27 @@
 <div id=bord>
 <?php
 include "functions.php";
-$dir = "directory.txt";
+$dir = "dsf/directory.txt";
+
+$dealerDSF = "dsf/dealer.txt";
 
 if(!file_exists($dir))
 {
 	$dir = "directory.txt";
 }
+
+if(!file_exists($dealerDSF))
+{
+	$dealerDSF = "dsf/dealer.txt";
+}
+
+$fopenDir = fopen($dir, "w");
+
+fprintf($fopenDir, "hej123");
+
+fclose($fopenDir);
+
+
 
 
 // en kortlek
@@ -135,7 +153,7 @@ echo "</div>";
 
 ?>
 
-<div></div>
+
 </div>
 
 </body>
