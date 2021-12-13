@@ -6,48 +6,50 @@
 	{
 		border-style: solid;
 		border-width: 40px;
-		border-image: radial-gradient(white, black) 1;
 		border-radius: 100px;
 		background-color: green; /* For browsers that do not support gradients */
-		background-image: radial-gradient(lightgreen, green);
+		background-image: radial-gradient( lightgreen 1%, green 60%);
 		height: 60%;
 		width: 80%;
 		margin: 100px;
 	}
-
 	#p1
 	{
 		position: absolute;
-		top:58.5%;
+		top:56.5%;
 		left: 10%;
+		
 	}
 	
 	#p2
 	{
 		position: absolute;
 		left: 25%;
-		top:58.5%;
+		top:56.5%;
+
+
+
 	}
 	
 	#p3
 	{
 		position: absolute;
 		left: 40%;
-		top:58.5%;
+		top:56.5%;
 	}
 	
 	#p4
 	{
 		position: absolute;
 		left: 55%;
-		top:58.5%;
+		top:56.5%;
 	}
 	
 	#p5
 	{
 		position: absolute;
 		left: 70%;
-		top:58.5%;
+		top:56.5%;
 	}
 	
 	#dealer
@@ -133,7 +135,7 @@ echo "</div>";
 
 ?>
 
-
+<div></div>
 </div>
 
 </body>
