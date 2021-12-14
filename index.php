@@ -1,79 +1,10 @@
-<style>
-
-
-
-	div#bord
-	{
-		border-style: solid;
-		border-width: 40px;
-		border-radius: 100px;
-		background-color: green; /* For browsers that do not support gradients */
-		background-image: radial-gradient( lightgreen 1%, green 60%);
-		height: 60%;
-		width: 80%;
-		margin: 100px;
-	}
-	#p1
-	{
-		position: absolute;
-		top:56.5%;
-		left: 10%;
-		
-	}
-	
-	#p2
-	{
-		position: absolute;
-		left: 25%;
-		top:56.5%;
-
-
-
-	}
-	
-	#p3
-	{
-		position: absolute;
-		left: 40%;
-		top:56.5%;
-	}
-	
-	#p4
-	{
-		position: absolute;
-		left: 55%;
-		top:56.5%;
-	}
-	
-	#p5
-	{
-		position: absolute;
-		left: 70%;
-		top:56.5%;
-	}
-	
-	#dealer
-	{
-		position: absolute;
-		left: 33%;
-	}
-	
-
-</style>
-
-
 
 <body>
 <div id=bord>
 <?php
 include "functions.php";
-$dir = "directory.txt";
-
-if(!file_exists($dir))
-{
-	$dir = "directory.txt";
-}
-
+echo "<link rel='stylesheet' type='text/css' href='mystyle.css' />";
+echo "<script type='text/javascript' src='myscripts.js'></script>";
 
 // en kortlek
 $kortlek = array();
@@ -98,6 +29,7 @@ $sparaFarg = array();
 $sparaVardeDealer = array();
 $sparaFargDealer = array();
 $sparaSparaVarde = array();
+$sparaPoint = array();
 
 
 // blanda kortleken
@@ -109,33 +41,36 @@ $dealer = dealer();
 echo "</div>";
 
 
-
-
 echo "<div id=container>";
-	echo "<div class=player id=p1>";
-	$c1 = check_hand(5, $sparaVarde, $sparaFarg);
+	echo "<div class=player id=p1 style='display:inline'>";
+	check_hand(5, $sparaVarde, $sparaFarg);
 	echo "</div>";
 
 	echo "<div class=player id=p2>";
-	$c2 = check_hand(7, $sparaVarde, $sparaFarg);
+	check_hand(7, $sparaVarde, $sparaFarg);
 	echo "</div>";
 
 	echo "<div class=player id=p3>";
-	$c3 = check_hand(9, $sparaVarde, $sparaFarg);
+	check_hand(9, $sparaVarde, $sparaFarg);
 	echo "</div>";
 
 	echo "<div class=player id=p4>";
-	$c4 = check_hand(11, $sparaVarde, $sparaFarg);
+	check_hand(11, $sparaVarde, $sparaFarg);
 	echo "</div>";
 
 	echo "<div class=player id=p5>";
-	$c5 = check_hand(13, $sparaVarde, $sparaFarg);
+	check_hand(13, $sparaVarde, $sparaFarg);
 	echo "</div>";
 echo "</div>";
 
+
+
+
 ?>
-
-<div></div>
 </div>
+<?php
+$dealerValue = playerValuesToArray(1);
+print_r($dealerValue);
 
+?>
 </body>
