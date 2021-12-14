@@ -1,0 +1,59 @@
+
+	div#bord
+	{
+		border-style: solid;
+		border-width: 40px;
+		border-radius: 100px;
+		background-color: green; /* For browsers that do not support gradients */
+		background-image: radial-gradient( lightgreen 1%, green 60%);
+		height: 60%;
+		width: 80%;
+		margin: 100px;
+	}
+	
+	#p1
+	{
+		position: absolute;
+		top:56.5%;
+		left: 10%;
+		display:inline;
+	}
+	
+	#p2
+	{
+		position: absolute;
+		left: 25%;
+		top:56.5%;
+		display:inline;
+	}
+	
+	#p3
+	{
+		position: absolute;
+		left: 40%;
+		top:56.5%;
+		display:inline;
+	}
+	
+	#p4
+	{
+		position: absolute;
+		left: 55%;
+		top:56.5%;
+		display:inline;
+	}
+	
+	#p5
+	{
+		position: absolute;
+		left: 70%;
+		top:56.5%;
+		display:inline;
+	}
+	
+	#dealer
+	{
+		position: absolute;
+		left: 33%;
+	}
+	

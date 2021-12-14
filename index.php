@@ -1,70 +1,10 @@
-<style>
-
-	div#bord
-	{
-		border-style: solid;
-		border-width: 40px;
-		border-radius: 100px;
-		background-color: green; /* For browsers that do not support gradients */
-		background-image: radial-gradient( lightgreen 1%, green 60%);
-		height: 60%;
-		width: 80%;
-		margin: 100px;
-	}
-	
-	#p1
-	{
-		position: absolute;
-		top:56.5%;
-		left: 10%;	
-	}
-	
-	#p2
-	{
-		position: absolute;
-		left: 25%;
-		top:56.5%;
-	}
-	
-	#p3
-	{
-		position: absolute;
-		left: 40%;
-		top:56.5%;
-	}
-	
-	#p4
-	{
-		position: absolute;
-		left: 55%;
-		top:56.5%;
-	}
-	
-	#p5
-	{
-		position: absolute;
-		left: 70%;
-		top:56.5%;
-	}
-	
-	#dealer
-	{
-		position: absolute;
-		left: 33%;
-	}
-	
-
-	
-
-</style>
-
-
 
 <body>
 <div id=bord>
 <?php
 include "functions.php";
-
+echo "<link rel='stylesheet' type='text/css' href='mystyle.css' />";
+echo "<script type='text/javascript' src='myscripts.js'></script>";
 
 // en kortlek
 $kortlek = array();
@@ -102,7 +42,7 @@ echo "</div>";
 
 
 echo "<div id=container>";
-	echo "<div class=player id=p1>";
+	echo "<div class=player id=p1 style='display:inline'>";
 	check_hand(5, $sparaVarde, $sparaFarg);
 	echo "</div>";
 
@@ -129,7 +69,7 @@ echo "</div>";
 ?>
 </div>
 <?php
-$dealerValue = dealerValuesToArray();
+$dealerValue = playerValuesToArray(1);
 print_r($dealerValue);
 
 ?>
