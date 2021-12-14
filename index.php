@@ -1,8 +1,5 @@
 <style>
 
-
-
-
 	div#bord
 	{
 		border-style: solid;
@@ -14,12 +11,12 @@
 		width: 80%;
 		margin: 100px;
 	}
+	
 	#p1
 	{
 		position: absolute;
 		top:56.5%;
-		left: 10%;
-		
+		left: 10%;	
 	}
 	
 	#p2
@@ -27,9 +24,6 @@
 		position: absolute;
 		left: 25%;
 		top:56.5%;
-
-
-
 	}
 	
 	#p3
@@ -70,27 +64,6 @@
 <div id=bord>
 <?php
 include "functions.php";
-$dir = "dsf/directory.txt";
-
-$dealerDSF = "dsf/dealer.txt";
-
-if(!file_exists($dir))
-{
-	$dir = "directory.txt";
-}
-
-if(!file_exists($dealerDSF))
-{
-	$dealerDSF = "dsf/dealer.txt";
-}
-
-$fopenDir = fopen($dir, "w");
-
-fprintf($fopenDir, "hej123");
-
-fclose($fopenDir);
-
-
 
 
 // en kortlek
@@ -116,6 +89,7 @@ $sparaFarg = array();
 $sparaVardeDealer = array();
 $sparaFargDealer = array();
 $sparaSparaVarde = array();
+$sparaPoint = array();
 
 
 // blanda kortleken
@@ -127,33 +101,36 @@ $dealer = dealer();
 echo "</div>";
 
 
-
-
 echo "<div id=container>";
 	echo "<div class=player id=p1>";
-	$c1 = check_hand(5, $sparaVarde, $sparaFarg);
+	check_hand(5, $sparaVarde, $sparaFarg);
 	echo "</div>";
 
 	echo "<div class=player id=p2>";
-	$c2 = check_hand(7, $sparaVarde, $sparaFarg);
+	check_hand(7, $sparaVarde, $sparaFarg);
 	echo "</div>";
 
 	echo "<div class=player id=p3>";
-	$c3 = check_hand(9, $sparaVarde, $sparaFarg);
+	check_hand(9, $sparaVarde, $sparaFarg);
 	echo "</div>";
 
 	echo "<div class=player id=p4>";
-	$c4 = check_hand(11, $sparaVarde, $sparaFarg);
+	check_hand(11, $sparaVarde, $sparaFarg);
 	echo "</div>";
 
 	echo "<div class=player id=p5>";
-	$c5 = check_hand(13, $sparaVarde, $sparaFarg);
+	check_hand(13, $sparaVarde, $sparaFarg);
 	echo "</div>";
 echo "</div>";
 
+
+
+
 ?>
-
-
 </div>
+<?php
+$dealerValue = dealerValuesToArray();
+print_r($dealerValue);
 
+?>
 </body>
